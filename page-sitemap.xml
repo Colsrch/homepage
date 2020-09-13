@@ -134,14 +134,14 @@
     </url>
     
     <url>
-        <loc>https://colsrch.cn/photo/pixiv/v5/</loc>
+        <loc>https://colsrch.cn/photo/pixiv/v4/</loc>
         <lastmod>2020-09-13T04:50:08.256Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://colsrch.cn/photo/pixiv/v4/</loc>
+        <loc>https://colsrch.cn/photo/pixiv/v5/</loc>
         <lastmod>2020-09-13T04:50:08.256Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -239,14 +239,14 @@
     </url>
     
     <url>
-        <loc>https://colsrch.cn/books/</loc>
+        <loc>https://colsrch.cn/about/</loc>
         <lastmod>2020-09-13T04:50:08.252Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://colsrch.cn/about/</loc>
+        <loc>https://colsrch.cn/books/</loc>
         <lastmod>2020-09-13T04:50:08.252Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
