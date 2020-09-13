@@ -1,0 +1,2731 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-rc.3'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+
+  <!-- 页面元数据 -->
+  
+  <title>如何给博客添加弹窗通知 - Colsrch&#39;Blog</title>
+  
+    <meta name="keywords" content="Volantis">
+  
+
+  
+    <meta name="description" content="本教程适用于Volantis主题">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="Colsrch'Blog" type="application/atom+xml">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+
+  
+
+  
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/Colsrch/CDN@master/favicon.webp">
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?aeed06f1c6afe2e173600eab0857125c";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
+  
+  <!-- 脚本懒加载函数 -->
+  <script>
+  function loadScript(src, cb) {
+    var HEAD = document.getElementsByTagName('head')[0] || document.documentElement;
+    var script = document.createElement('script');
+    script.setAttribute('type','text/javascript');
+    if (cb) script.onload = cb;
+    script.setAttribute('src', src);
+    HEAD.appendChild(script);
+  }
+  //https://github.com/filamentgroup/loadCSS
+  !function(c){"use strict";var e=function(e,t,n,r){var o,i=c.document,a=i.createElement("link");if(t)o=t;else{var d=(i.body||i.getElementsByTagName("head")[0]).childNodes;o=d[d.length-1]}var f=i.styleSheets;if(r)for(var l in r)r.hasOwnProperty(l)&&a.setAttribute(l,r[l]);a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(i.body)return t();setTimeout(function(){e(t)})}(function(){o.parentNode.insertBefore(a,t?o:o.nextSibling)});var s=function(e){for(var t=a.href,n=f.length;n--;)if(f[n].href===t)return e();setTimeout(function(){s(e)})};function u(){a.addEventListener&&a.removeEventListener("load",u),a.media=n||"all"}return a.addEventListener&&a.addEventListener("load",u),(a.onloadcssdefined=s)(u),a};"undefined"!=typeof exports?exports.loadCSS=e:c.loadCSS=e}("undefined"!=typeof global?global:this);
+  </script>
+  <script id="loadcss"></script>
+</head>
+
+<body>
+  <header class="l_header auto shadow blur " style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)' rel="external nofollow noreferrer"></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)' rel="external nofollow noreferrer"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/Colsrch/CDN@master/colsrch.webp'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-cube fa-fw fa-fw'></i>项目
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/wiki/papro/
+                  
+                  
+                  
+                    id="wikipapro"
+                  >
+                  成绩自动分析工具
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/wiki/
+                  
+                  
+                  
+                    id="wiki"
+                  >
+                  <i class='fas fa-chevron-right fa-fw fa-fw'></i>所有项目
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa-fw fa fa-book fa-fw fa-fw'></i>找文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa-fw fa fa-bars fa-fw'></i>娱乐
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/books/
+                  
+                  
+                  
+                    id="books"
+                  >
+                  <i class='fa fa-book fa-fw'></i>悦读
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/photo/
+                  
+                  
+                  
+                    id="photo"
+                  >
+                  <i class='fa fa-image fa-fw'></i>相册
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa-fw fa fa-bars fa-fw'></i>小功能
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="atomxml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>RSS订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://7bu.top/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:7butop"
+                  >
+                  <i class='fa fa-globe fa-fw'></i>去不图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://travellings.now.sh/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:travellingsnowsh"
+                  >
+                  <i class='fa fa-binoculars fa-fw'></i>开往
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://lmioy5cbjrrc.leanapp.cn/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:lmioy5cbjrrcleanappcn"
+                  >
+                  <i class='far fa-comments fa-fw fa-fw'></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://jxsfgz-cat.cloudstudio.net/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:jxsfgz-catcloudstudionet"
+                  >
+                  <i class='far fa-edit fa-fw fa-fw'></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://tongji.baidu.com/web/welcome/ico?s=aeed06f1c6afe2e173600eab0857125c
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:tongjibaiducomwebwelcomeico?s=aeed06f1c6afe2e173600eab0857125c"
+                  >
+                  <i class='fa fa-align-left fa-fw fa-fw'></i>百度统计
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://ssl.colsrch.top/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:sslcolsrchtop"
+                  >
+                  <i class='fab fa-expeditedssl fa-fw'></i>SSL检测
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/history/
+                  
+                  
+                  
+                    id="history"
+                  >
+                  <i class='fa fa-history fa-fw'></i>建站史
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/Creator-said/
+                  
+                  
+                  
+                    id="Creator-said"
+                  >
+                  <i class='fas fa-comment-dots fa-fw fa-fw'></i>主创说
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/messages/
+                  
+                  
+                  
+                    id="messages"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://donations.colsrch.top/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="http:donationscolsrchtop"
+                  >
+                  <i class='fa fa-hand-holding-usd fa-fw'></i>要饭饭
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="想找些什么~" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)' rel="external nofollow noreferrer"></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)' rel="external nofollow noreferrer"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-cube fa-fw fa-fw'></i>项目
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/wiki/papro/
+                  
+                  
+                  
+                    id="wikipapro"
+                  >
+                  成绩自动分析工具
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/wiki/
+                  
+                  
+                  
+                    id="wiki"
+                  >
+                  <i class='fas fa-chevron-right fa-fw fa-fw'></i>所有项目
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa-fw fa fa-book fa-fw fa-fw'></i>找文章
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa-fw fa fa-bars fa-fw'></i>娱乐
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/books/
+                  
+                  
+                  
+                    id="books"
+                  >
+                  <i class='fa fa-book fa-fw'></i>悦读
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/photo/
+                  
+                  
+                  
+                    id="photo"
+                  >
+                  <i class='fa fa-image fa-fw'></i>相册
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa-fw fa fa-bars fa-fw'></i>小功能
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/atom.xml
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="atomxml"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>RSS订阅
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://7bu.top/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:7butop"
+                  >
+                  <i class='fa fa-globe fa-fw'></i>去不图床
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://travellings.now.sh/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:travellingsnowsh"
+                  >
+                  <i class='fa fa-binoculars fa-fw'></i>开往
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://lmioy5cbjrrc.leanapp.cn/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:lmioy5cbjrrcleanappcn"
+                  >
+                  <i class='far fa-comments fa-fw fa-fw'></i>评论管理
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://jxsfgz-cat.cloudstudio.net/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:jxsfgz-catcloudstudionet"
+                  >
+                  <i class='far fa-edit fa-fw fa-fw'></i>云端编辑
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://tongji.baidu.com/web/welcome/ico?s=aeed06f1c6afe2e173600eab0857125c
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:tongjibaiducomwebwelcomeico?s=aeed06f1c6afe2e173600eab0857125c"
+                  >
+                  <i class='fa fa-align-left fa-fw fa-fw'></i>百度统计
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://ssl.colsrch.top/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="https:sslcolsrchtop"
+                  >
+                  <i class='fab fa-expeditedssl fa-fw'></i>SSL检测
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fa fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/history/
+                  
+                  
+                  
+                    id="history"
+                  >
+                  <i class='fa fa-history fa-fw'></i>建站史
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/Creator-said/
+                  
+                  
+                  
+                    id="Creator-said"
+                  >
+                  <i class='fas fa-comment-dots fa-fw fa-fw'></i>主创说
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/messages/
+                  
+                  
+                  
+                    id="messages"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言板
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=http://donations.colsrch.top/
+                  
+                    rel="noopener external nofollow noreferrer"
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="http:donationscolsrchtop"
+                  >
+                  <i class='fa fa-hand-holding-usd fa-fw'></i>要饭饭
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+  
+    
+    
+        <div class='cover-wrapper post dock' style="display: none;">
+          
+            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/Colsrch/CDN/wallpaper-2.webp"></div>
+          
+          <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Colsrch</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              id="home">
+              <i class='fas fa-home fa-fw'></i><p>首页</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              id="tags">
+              <i class='fas fa-hashtag fa-fw'></i><p>标签</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <i class='fas fa-list fa-fw'></i><p>时间轴</p>
+            </a>
+          
+            <a href="/Creator-said/"
+              
+              
+              id="Creator-said">
+              <i class='fas fa-user-circle fa-fw'></i><p>主创说</p>
+            </a>
+          
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-link fa-fw'></i><p>友链</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        </div>
+    
+  
+  </div>
+  
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">如何给博客添加弹窗通知</div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path"></div> 
+  <div id="pjax-comment-placeholder"></div> 
+</div> 
+ 
+ 
+<script> 
+  // 处理封面 此时 jquery 还没加载 
+  if ("none" == "none") { // 移除封面 
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none"; 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
+  } else { 
+    if ("none" == "half") { // 半屏 
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half'); 
+      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
+    } else if ("none" == "full") { // 全屏 
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full'); 
+      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
+    } 
+    document.getElementsByClassName('cover-wrapper')[0].style.display = ""; 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
+  } 
+</script> 
+ 
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow floatable article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+    <div class='headimg-div'>
+      <a class='headimg-a'>
+        <img class='headimg' src='https://7bu.top/2020/09/08/726982ed3ae80.png'/>
+      </a>
+    </div>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        如何给博客添加弹窗通知
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg">
+    <p>Colsrch</p>
+  </a>
+</div>
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年9月3日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Volantis/">Volantis</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：18分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="如何给博客添加弹窗通知" data-path="/posts/72bb5148/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+<div class="new-meta-item comments-count">
+  
+  <a href="/posts/72bb5148/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/posts/72bb5148/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  
+  <div class="note message yellow"><p>本教程适用于Volantis主题</p></div>
+
+<a id="more"></a>
+
+<h2 id="『言』"><a href="#『言』" class="headerlink" title="『言』"></a>『言』</h2><div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
+            <p>该教程理论上支持所有Hexo主题</p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p>照搬该教程可实现音乐通知、音乐自动播放通知、复制内容通知</p>
+            </div>
+<div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>
+            <p>其他通知可根据原理自行添加哦~</p>
+            </div>
+
+<h2 id="添加Message-js"><a href="#添加Message-js" class="headerlink" title="添加Message.js"></a>添加Message.js</h2><p>为了控制弹窗的弹出与收回，需要添加一个js控制其行为 <code>Message.js</code></p>
+<p>有两种方法添加该js</p>
+<ol>
+<li>在<code>themes/volantis/source/js</code>目录中新建一个文件名为<code>Message.js</code>的文件，在其中写入下方代码。</li>
+<li>在<code>themes/volantis/source/js/app.js</code>文件末尾直接添加该js代码。</li>
+</ol>
+<psw>为了保持目录干净，我推荐第二种方法哦~</psw>
+
+<details green><summary> <p>点击查看Message.js代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Message.js</span></span><br><span class="line">$.extend(&#123;<span class="attr">message</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> n=&#123;<span class="attr">title</span>:<span class="string">&quot;&quot;</span>,<span class="attr">message</span>:<span class="string">&quot; 操作成功&quot;</span>,<span class="attr">time</span>:<span class="string">&quot;3000&quot;</span>,<span class="attr">type</span>:<span class="string">&quot;success&quot;</span>,<span class="attr">showClose</span>:!<span class="number">0</span>,<span class="attr">autoClose</span>:!<span class="number">0</span>,<span class="attr">onClose</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;&#125;;<span class="string">&quot;string&quot;</span>==<span class="keyword">typeof</span> e&amp;&amp;(n.message=e),<span class="string">&quot;object&quot;</span>==<span class="keyword">typeof</span> e&amp;&amp;(n=$.extend(&#123;&#125;,n,e));<span class="keyword">var</span> i,o,s,t=n.showClose?<span class="string">&#x27;&lt;div class=&quot;c-message--close&quot;&gt;×&lt;/div&gt;&#x27;</span>:<span class="string">&quot;&quot;</span>,a=<span class="string">&quot;&quot;</span>!==n.title?<span class="string">&#x27;&lt;h2 class=&quot;c-message__title&quot;&gt;&#x27;</span>+n.title+<span class="string">&quot;&lt;/h2&gt;&quot;</span>:<span class="string">&quot;&quot;</span>,c=<span class="string">&#x27;&lt;div class=&quot;c-message animated animated-lento slideInRight&quot;&gt;&lt;i class=&quot; c-message--icon c-message--&#x27;</span>+n.type+<span class="string">&#x27;&quot;&gt;&lt;/i&gt;&lt;div class=&quot;el-notification__group&quot;&gt;&#x27;</span>+a+<span class="string">&#x27;&lt;div class=&quot;el-notification__content&quot;&gt;&#x27;</span>+n.message+<span class="string">&quot;&lt;/div&gt;&quot;</span>+t+<span class="string">&quot;&lt;/div&gt;&lt;/div&gt;&quot;</span>,m=$(<span class="string">&quot;body&quot;</span>),d=$(c);o=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;d.addClass(<span class="string">&quot;slideOutRight&quot;</span>),d.one(<span class="string">&quot;webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;s()&#125;)&#125;,s=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;d.remove(),n.onClose(n),<span class="built_in">clearTimeout</span>(i)&#125;,$(<span class="string">&quot;.c-message&quot;</span>).remove(),m.append(d),d.one(<span class="string">&quot;webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;d.removeClass(<span class="string">&quot;messageFadeInDown&quot;</span>)&#125;),m.one(<span class="string">&quot;click&quot;</span>,<span class="string">&quot;.c-message--close&quot;</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;o()&#125;),n.autoClose&amp;&amp;(i=<span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;o()&#125;,n.time))&#125;&#125;);</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h2 id="添加弹窗css样式"><a href="#添加弹窗css样式" class="headerlink" title="添加弹窗css样式"></a>添加弹窗css样式</h2><ol>
+<li>在<code>themes/volantis/source/css</code>目录中新建一个文件夹，文件夹名为：<code>_xxxxxx</code>。例如：<code>_colsrch</code></li>
+<li>在<code>themes/volantis/source/_colsrch</code>目录中新建一个文件，文件名为：<code>message.styl</code></li>
+<li>在<code>themes/volantis/source/style.styl</code>文件末尾中用import包含刚新建的文件夹，示例：@import ‘_colsrch/*’</li>
+<li>将下方代码复制至<code>message.styl</code>文件中</li>
+</ol>
+<p><img src="https://7bu.top/2020/09/03/ca5d0bd623de6.png" class="lazyload" data-srcset="https://7bu.top/2020/09/03/ca5d0bd623de6.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt=""></p>
+<details green><summary> <p>点击查看message.styl代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight styl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$pointer</span> = url(<span class="string">&quot;https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png&quot;</span>)</span><br><span class="line"></span><br><span class="line">.animated</span><br><span class="line">  -webkit-<span class="attribute">animation-duration</span> <span class="number">1s</span></span><br><span class="line">  <span class="attribute">animation-duration</span> <span class="number">1s</span></span><br><span class="line">  -webkit-<span class="attribute">animation-fill-mode</span> none</span><br><span class="line">  <span class="attribute">animation-fill-mode</span> none</span><br><span class="line">  &amp;.infinite</span><br><span class="line">    -webkit-<span class="attribute">animation-iteration-count</span> infinite</span><br><span class="line">    <span class="attribute">animation-iteration-count</span> infinite</span><br><span class="line">  &amp;.hinge</span><br><span class="line">    -webkit-<span class="attribute">animation-duration</span> <span class="number">2s</span></span><br><span class="line">    <span class="attribute">animation-duration</span> <span class="number">2s</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.animated</span><span class="selector-class">.bounceIn</span>,</span><br><span class="line"><span class="selector-class">.animated</span>.bounceOut</span><br><span class="line">  -webkit-animation-duration .75s</span><br><span class="line">  animation-duration .75s</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.animated</span><span class="selector-class">.flipOutX</span>,</span><br><span class="line"><span class="selector-class">.animated</span>.flipOutY</span><br><span class="line">  -webkit-animation-duration .75s</span><br><span class="line">  animation-duration .75s</span><br><span class="line"></span><br><span class="line">.slideInDown</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideInDown</span><br><span class="line">  <span class="attribute">animation-name</span> slideInDown</span><br><span class="line"></span><br><span class="line">.slideInLeft</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideInLeft</span><br><span class="line">  <span class="attribute">animation-name</span> slideInLeft</span><br><span class="line"></span><br><span class="line">.slideInRight</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideInRight</span><br><span class="line">  <span class="attribute">animation-name</span> slideInRight</span><br><span class="line"></span><br><span class="line">.slideInUp</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideInUp</span><br><span class="line">  <span class="attribute">animation-name</span> slideInUp</span><br><span class="line"></span><br><span class="line">.slideOutDown</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideOutDown</span><br><span class="line">  <span class="attribute">animation-name</span> slideOutDown</span><br><span class="line"></span><br><span class="line">.slideOutLeft</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideOutLeft</span><br><span class="line">  <span class="attribute">animation-name</span> slideOutLeft</span><br><span class="line"></span><br><span class="line">.slideOutRight</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideOutRight</span><br><span class="line">  <span class="attribute">animation-name</span> slideOutRight</span><br><span class="line"></span><br><span class="line">.slideOutUp</span><br><span class="line">  -webkit-<span class="attribute">animation-name</span> slideOutUp</span><br><span class="line">  <span class="attribute">animation-name</span> slideOutUp</span><br><span class="line"></span><br><span class="line">.c-message</span><br><span class="line">  <span class="attribute">top</span> <span class="number">16px</span></span><br><span class="line">  <span class="attribute">z-index</span> <span class="number">2000</span></span><br><span class="line">  <span class="attribute">width</span> <span class="number">300px</span></span><br><span class="line">  <span class="attribute">padding</span> <span class="number">14px</span> <span class="number">26px</span> <span class="number">14px</span> <span class="number">13px</span></span><br><span class="line">  <span class="attribute">box-sizing</span> border-box</span><br><span class="line">  <span class="attribute">position</span> fixed</span><br><span class="line">  <span class="attribute">right</span> <span class="number">16px</span></span><br><span class="line">  <span class="attribute">background-color</span> <span class="number">#fff</span></span><br><span class="line">  transition opacity .3s, transform .3s, right .3s, top .4s</span><br><span class="line">  <span class="attribute">overflow</span> hidden</span><br><span class="line">  box-shadow 0 2px 12px 0 rgba(0, 0, 0, .1)</span><br><span class="line">  <span class="attribute">border-radius</span> <span class="number">8px</span></span><br><span class="line">  <span class="attribute">border</span> <span class="number">1px</span> solid <span class="number">#ebeef5</span></span><br><span class="line">  a</span><br><span class="line">    border-bottom 1px solid rgba(131, 145, 165, .8)</span><br><span class="line">    <span class="attribute">color</span> inherit</span><br><span class="line">    <span class="attribute">text-decoration</span> none</span><br><span class="line">    <span class="attribute">cursor</span> <span class="variable">$pointer</span>,pointer !important</span><br><span class="line">    <span class="attribute">word-break</span> break-all</span><br><span class="line">    &amp;:hover</span><br><span class="line">      <span class="attribute">border-bottom</span> <span class="number">1px</span> solid <span class="number">#5c6775</span></span><br><span class="line">  &amp;.messageFadeInDown</span><br><span class="line">    -webkit-animation-duration .6s</span><br><span class="line">    animation-duration .6s</span><br><span class="line">    -webkit-<span class="attribute">animation-fill-mode</span> both</span><br><span class="line">    <span class="attribute">animation-fill-mode</span> both</span><br><span class="line">    -webkit-<span class="attribute">animation-name</span> messageFadeInDown</span><br><span class="line">    <span class="attribute">animation-name</span> messageFadeInDown</span><br><span class="line">  &amp;.messageFadeOutUp</span><br><span class="line">    -webkit-animation-duration .6s</span><br><span class="line">    animation-duration .6s</span><br><span class="line">    -webkit-<span class="attribute">animation-fill-mode</span> both</span><br><span class="line">    <span class="attribute">animation-fill-mode</span> both</span><br><span class="line">    -webkit-<span class="attribute">animation-name</span> messageFadeOutUp</span><br><span class="line">    <span class="attribute">animation-name</span> messageFadeOutUp</span><br><span class="line"></span><br><span class="line">.c-message__title</span><br><span class="line">  <span class="attribute">font-weight</span> <span class="number">400</span></span><br><span class="line">  <span class="attribute">font-size</span> <span class="number">15px</span></span><br><span class="line">  <span class="attribute">color</span> <span class="number">#1f2d3d</span></span><br><span class="line">  <span class="attribute">margin</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">.c-message--<span class="attribute">icon</span></span><br><span class="line">  <span class="attribute">position</span> absolute</span><br><span class="line">  <span class="attribute">color</span> <span class="number">#fff</span></span><br><span class="line">  <span class="attribute">height</span> <span class="number">25px</span></span><br><span class="line">  <span class="attribute">width</span> <span class="number">25px</span></span><br><span class="line">  <span class="attribute">font-size</span> <span class="number">25px</span></span><br><span class="line"></span><br><span class="line">.el-notification__content</span><br><span class="line">  <span class="attribute">font-size</span> <span class="number">13px</span></span><br><span class="line">  <span class="attribute">line-height</span> <span class="number">21px</span></span><br><span class="line">  <span class="attribute">margin</span> <span class="number">10px</span> <span class="number">0</span> <span class="number">0</span></span><br><span class="line">  <span class="attribute">color</span> <span class="number">#8391a5</span></span><br><span class="line">  <span class="attribute">text-align</span> justify</span><br><span class="line"></span><br><span class="line">.el-notification__group</span><br><span class="line">  <span class="attribute">margin-left</span> <span class="number">35px</span></span><br><span class="line"></span><br><span class="line">.c-message--close</span><br><span class="line">  <span class="attribute">position</span> absolute</span><br><span class="line">  <span class="attribute">right</span> <span class="number">10px</span></span><br><span class="line">  <span class="attribute">color</span> <span class="number">#999</span></span><br><span class="line">  <span class="attribute">text-decoration</span> none</span><br><span class="line">  <span class="attribute">cursor</span> <span class="variable">$pointer</span>,pointer</span><br><span class="line">  <span class="attribute">font-size</span> <span class="number">25px</span></span><br><span class="line">  <span class="attribute">top</span> <span class="number">0</span></span><br><span class="line">  <span class="attribute">line-height</span> <span class="number">34px</span></span><br><span class="line">  <span class="attribute">display</span> block</span><br><span class="line">  <span class="attribute">height</span> <span class="number">20px</span></span><br><span class="line">  <span class="attribute">font-weight</span> <span class="number">100</span></span><br><span class="line">  &amp;:hover</span><br><span class="line">    <span class="attribute">color</span> <span class="number">#666</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.c-message--success</span> </span><br><span class="line">    <span class="attribute">background</span>: url(<span class="string">&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTE2NDE5MDE4MjQ0IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjUgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE3OTAiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQuMDIzNDM3NSIgaGVpZ2h0PSIyNCI+PGRlZnM+PHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPjwvZGVmcz48cGF0aCBkPSJNODEwLjAxNTg1Nzc4IDMzMy40MzYwMTc3OEw0ODAuMzkyNTMzMzMgNzI0LjkwNjY2NjY3Yy0xNC42NjkzNjg4OSAxNi41MDQ2MDQ0NS0zOS42ODIyNzU1NSAxOC42MzU2NjIyMi01Ni45MzQ0IDQuODA3MTExMTFMMjI0LjE5OTExMTExIDU0MS4wNTU0MzExMWMtMi4xNTM4MTMzMy0yLjA1MzY4ODg5LTMuOTE5NjQ0NDUtNC4zMjY5Njg4OS01LjQ2NzAyMjIyLTYuNzA0OTI0NDQtNC4xMTUzNDIyMi01Ljc1NjAxNzc4LTYuNjExNjI2NjctMTIuNzU1NjI2NjctNi42MTE2MjY2Ny0yMC4zOTM1Mjg4OSAwLTE5LjM5MDAwODg5IDE1LjcxMDQzNTU1LTM1LjExNjM3MzMzIDM1LjEyMzItMzUuMTE2MzczMzMgNi4wOTczNTExMSAwIDExLjc1MjEwNjY3IDEuNjg3MzI0NDUgMTYuNzQ1ODEzMzMgNC40MTc5OTExIDAuNDgyNDE3NzggMC4yNzE5Mjg4OSAxLjAzNDI0IDAuNDc1NTkxMTEgMS40ODU5Mzc3OCAwLjc1NDM0NjY3bDAuNzIzNjI2NjcgMC40NTA1NmMwLjM1NzI2MjIyIDAuMjMzMjQ0NDUgMC43MzE1OTExMSAwLjQ3NTU5MTExIDEuMDk3OTU1NTUgMC43MjQ3NjQ0NWwxNzUuNjM3NjE3NzggMTE0LjMyNjE4NjY2YzIuMzE3NjUzMzMgMS41MjQ2MjIyMiA1LjM1ODkzMzMzIDEuMjEyODcxMTEgNy4zMjUwMTMzNC0wLjcxNTY2MjIybDMxMy41NzA0MTc3OC0zMDguMTQyMDhjMTIuMjQyNDg4ODktMTIuMDI0MDM1NTUgMzEuODU3Nzc3NzgtMTIuMDMyIDQ0LjExMjc4MjIyLTAuMDMwNzJDODE5LjczODE2ODg5IDMwMi4xNTI4MTc3OCA4MjAuNjQwNDI2NjcgMzIwLjgyMDMzNzc4IDgxMC4wMTU4NTc3OCAzMzMuNDM2MDE3NzhNNTE0LjIxMDcwMjIyLTIuMTI5OTJjLTI4MS41MDg5Nzc3OCAwLTUwOS43MjQ0NDQ0NSAyMjguMjE1NDY2NjctNTA5LjcyNDQ0NDQ0IDUwOS43MjQ0NDQ0NXMyMjguMjE1NDY2NjcgNTA5LjcyNDQ0NDQ1IDUwOS43MjQ0NDQ0NCA1MDkuNzI0NDQ0NDRjMjgxLjUyNDkwNjY3IDAgNTA5LjcyNDQ0NDQ1LTIyOC4yMTU0NjY2NyA1MDkuNzI0NDQ0NDUtNTA5LjcyNDQ0NDQ0Uzc5NS43MzU2MDg4OS0yLjEyOTkyIDUxNC4yMTA3MDIyMi0yLjEyOTkyeiIgZmlsbD0iIzY3YzIzYSIgcC1pZD0iMTc5MSI+PC9wYXRoPjwvc3ZnPg==&quot;</span>) no-repeat <span class="number">0</span> <span class="number">50%</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.c-message--error</span> </span><br><span class="line">    <span class="attribute">background</span>: url(<span class="string">&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTE2NDE3MjY0NzM4IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjQ0NzMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTk4My44IDMxMi43Qzk1OCAyNTEuNyA5MjEgMTk3IDg3NCAxNTBjLTQ3LTQ3LTEwMS43LTg0LTE2Mi43LTEwOS43QzY0OC4yIDEzLjUgNTgxLjEgMCA1MTIgMFMzNzUuOCAxMy41IDMxMi43IDQwLjNDMjUxLjcgNjYgMTk3IDEwMyAxNTAgMTUwYy00NyA0Ny04NCAxMDEuNy0xMDkuNyAxNjIuN0MxMy41IDM3NS44IDAgNDQyLjkgMCA1MTJzMTMuNSAxMzYuMiA0MC4zIDE5OS4zQzY2IDc3Mi4zIDEwMyA4MjcgMTUwIDg3NGM0NyA0NyAxMDEuOCA4My45IDE2Mi43IDEwOS43IDYzLjEgMjYuNyAxMzAuMiA0MC4zIDE5OS4zIDQwLjNzMTM2LjItMTMuNSAxOTkuMy00MC4zQzc3Mi4zIDk1OCA4MjcgOTIxIDg3NCA4NzRjNDctNDcgODMuOS0xMDEuOCAxMDkuNy0xNjIuNyAyNi43LTYzLjEgNDAuMy0xMzAuMiA0MC4zLTE5OS4zcy0xMy41LTEzNi4yLTQwLjItMTk5LjN6TTY2NC43IDYxMy44YzE0LjEgMTQuMSAxNC4xIDM2LjkgMCA1MC45LTcgNy0xNi4yIDEwLjUtMjUuNSAxMC41cy0xOC40LTMuNS0yNS41LTEwLjVMNTEyIDU2Mi45IDQxMC4yIDY2NC43Yy03IDctMTYuMiAxMC41LTI1LjUgMTAuNXMtMTguNC0zLjUtMjUuNS0xMC41Yy0xNC4xLTE0LjEtMTQuMS0zNi45IDAtNTAuOUw0NjEuMSA1MTIgMzU5LjMgNDEwLjJjLTE0LjEtMTQuMS0xNC4xLTM2LjkgMC01MC45IDE0LjEtMTQuMSAzNi45LTE0LjEgNTAuOSAwTDUxMiA0NjEuMWwxMDEuOC0xMDEuOGMxNC4xLTE0LjEgMzYuOS0xNC4xIDUwLjkgMCAxNC4xIDE0LjEgMTQuMSAzNi45IDAgNTAuOUw1NjIuOSA1MTJsMTAxLjggMTAxLjh6IiBwLWlkPSI0NDc0IiBmaWxsPSIjZjY2YzZiIiBkYXRhLXNwbS1hbmNob3ItaWQ9ImEzMTN4Ljc3ODEwNjkuMC5pMiIgY2xhc3M9IiI+PC9wYXRoPjwvc3ZnPg==&quot;</span>) no-repeat <span class="number">0</span> <span class="number">50%</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.c-message--info</span> </span><br><span class="line">    <span class="attribute">background</span>: url(<span class="string">&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTE2NDE5MTk2ODQ3IiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjExMzciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxMiA3LjEzMDA3NDA4Yy0yNzguODQzNTQzNyAwLTUwNC44Njk5MjU5MiAyMjYuMDI2MzgyMjItNTA0Ljg2OTkyNTkyIDUwNC44Njk5MjU5MnMyMjYuMDI2MzgyMjIgNTA0Ljg2OTkyNTkyIDUwNC44Njk5MjU5MiA1MDQuODY5OTI1OTIgNTA0Ljg2OTkyNTkyLTIyNi4wMjYzODIyMiA1MDQuODY5OTI1OTItNTA0Ljg2OTkyNTkyLTIyNi4wMjYzODIyMi01MDQuODY5OTI1OTItNTA0Ljg2OTkyNTkyLTUwNC44Njk5MjU5MnpNNTkxLjE4NjkwNjA4IDY5Ny43NTMyOTY1OWMtMzguMDk4MjYxMzMgNTcuMjA1NjQ2MjItNzYuODU2NzM3MTggMTAxLjI4NDY3NDM3LTE0Mi4wNjI2Mjk5MyAxMDEuMjg0Njc0MzgtNDQuNTA2MjI1NzgtNy4yNjIzNTk3LTYyLjc5ODA1MTU1LTM5LjE0NjgzNzMzLTUzLjE2NjY4NjgyLTcxLjY1MjY5MzM0bDgzLjg4NjA4LTI3Ny44MzM4MDM4NWMyLjA1ODMxNTg1LTYuNzk2MzI1OTItMS4zNTkyNjUxOC0xNC4wNTg2ODU2My03LjU3MzA0ODg4LTE2LjI3MjM0NjA4LTYuMTc0OTQ3NTUtMi4xNzQ4MjQzLTE4LjI5MTgyNTc4IDUuODY0MjU4MzctMjguNzc3NTg1NzggMTcuMzU5NzU4MjJsLTUwLjcyMDAwOTQ5IDYxLjAxMTU4ODc1Yy0xLjM1OTI2NTE4LTEwLjI1Mjc0MzExLTAuMTU1MzQ0NTktMjcuMTg1MzAzNy0wLjE1NTM0NDU5LTM0LjAyMDQ2NTc4IDM4LjA5ODI2MTMzLTU3LjIwNTY0NjIyIDEwMC43MDIxMzIxNS0xMDIuMzMzMjUwMzcgMTQzLjE1MDA0MjA4LTEwMi4zMzMyNTAzNyA0MC4zNTA3NTc5MiA0LjExNjYzMTcgNTkuNDU4MTQyODIgMzYuMzg5NDcwODIgNTIuNDI4OCA3MS44NDY4NzQwN2wtODQuNDY4NjIyMjIgMjc5LjE5MzA2OTA0Yy0xLjEyNjI0ODMgNi4yOTE0NTYgMi4yMTM2NjA0NSAxMi42OTk0MjA0NSA3LjkyMjU3NDIyIDE0LjcxODkwMDE1IDYuMjEzNzgzNyAyLjE3NDgyNDMgMTkuMjYyNzI5NDgtNS44NjQyNTgzNyAyOS43ODczMjU2My0xNy4zNTk3NTgyM2w1MC42ODExNzMzMy02MC45NzI3NTI1OGMxLjM1OTI2NTE4IDEwLjI1Mjc0MzExLTAuOTMyMDY3NTUgMjguMTk1MDQzNTUtMC45MzIwNjc1NSAzNS4wMzAyMDU2MnpNNTc5Ljg4NTU4Njk3IDMzNC44NjgzMjgzYy0zMi4wNzg2NTgzNyAwLTU4LjA5ODg3NzYzLTIzLjM3OTM2MTE4LTU4LjA5ODg3NzY0LTU3Ljc4ODE4ODQ1czI2LjAyMDIxOTI1LTU3Ljc0OTM1MjMgNTguMDk4ODc3NjQtNTcuNzQ5MzUyMyA1OC4wOTg4Nzc2MyAyMy4zNzkzNjExOCA1OC4wOTg4Nzc2MiA1Ny43NDkzNTIzYzAgMzQuNDQ3NjYzNDEtMjYuMDIwMjE5MjUgNTcuNzg4MTg4NDUtNTguMDk4ODc3NjIgNTcuNzg4MTg4NDV6IiBmaWxsPSIjMjE5NmYzIiBwLWlkPSIxMTM4Ij48L3BhdGg+PC9zdmc+&quot;</span>) no-repeat <span class="number">0</span> <span class="number">50%</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.c-message--warning</span> </span><br><span class="line">    <span class="attribute">background</span>: url(<span class="string">&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyB0PSIxNTE2NDE4MzA1NDMxIiBjbGFzcz0iaWNvbiIgc3R5bGU9IiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjcxOTciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PC9zdHlsZT48L2RlZnM+PHBhdGggZD0iTTUxMiAxMDI0QzIyOS4yMzIgMTAyNCAwIDc5NC43NjggMCA1MTIgMCAyMjkuMjMyIDIyOS4yMzIgMCA1MTIgMGMyODIuNzY4IDAgNTEyIDIyOS4yMzIgNTEyIDUxMkMxMDI0IDc5NC43NjggNzk0Ljc2OCAxMDI0IDUxMiAxMDI0ek01NjAgMjQwYzAtMjYuNTEyLTIxLjQ4OC00OC00OC00OHMtNDggMjEuNDg4LTQ4IDQ4bDAgMzUyYzAgMjYuNTEyIDIxLjQ4OCA0OCA0OCA0OHM0OC0yMS40ODggNDgtNDhMNTYwIDI0MHpNNTEyIDczNmMtMjYuNTEyIDAtNDggMjEuNDg4LTQ4IDQ4czIxLjQ4OCA0OCA0OCA0OCA0OC0yMS40ODggNDgtNDhTNTM4LjUxMiA3MzYgNTEyIDczNnoiIHAtaWQ9IjcxOTgiIGZpbGw9IiNlNmEyM2MiPjwvcGF0aD48L3N2Zz4=&quot;</span>) no-repeat <span class="number">0</span> <span class="number">50%</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">@-webkit-keyframes slideInDown </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@keyframes slideInDown </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@-webkit-keyframes slideInLeft </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@keyframes slideInLeft </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@-webkit-keyframes slideInRight </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@keyframes slideInRight </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@-webkit-keyframes slideInUp </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@keyframes slideInUp </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="attribute">visibility</span>: visible</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@-webkit-keyframes slideOutDown </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@keyframes slideOutDown </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes slideOutLeft </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">@keyframes slideOutLeft </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(-<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes slideOutRight </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">@keyframes slideOutRight </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">100%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">120%</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">@-webkit-keyframes slideOutUp </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@keyframes slideOutUp </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">visibility</span>: hidden;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">@keyframes messageFadeInDown </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translate3d(<span class="number">0</span>, -<span class="number">100%</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        -webkit-<span class="attribute">transform</span>: none;</span><br><span class="line">        <span class="attribute">transform</span>: none</span><br><span class="line">    </span><br><span class="line">@keyframes messageFadeOutUp </span><br><span class="line">    <span class="number">0%</span> </span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">1</span></span><br><span class="line">    <span class="number">100%</span> </span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">        -webkit-<span class="attribute">transform</span>: translateY(-<span class="number">100%</span>)</span><br><span class="line">        <span class="attribute">transform</span>: translateY(-<span class="number">100%</span>)</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h2 id="添加音乐通知"><a href="#添加音乐通知" class="headerlink" title="添加音乐通知"></a>添加音乐通知</h2><h3 id="修改aplayer"><a href="#修改aplayer" class="headerlink" title="修改aplayer"></a>修改aplayer</h3><p>删除<code>themes/volantis/layout/third-party/aplayer/layout.ejs</code>文件中的<code>autoplay=&#39;&lt;%- aplayer.autoplay %&gt;&#39;</code></p>
+<p><img src="https://7bu.top/2020/09/04/8db315b01d9f7.png" class="lazyload" data-srcset="https://7bu.top/2020/09/04/8db315b01d9f7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt=""></p>
+<p>在<code>themes/volantis/layout/third-party/aplayer/script.ejs</code>文件中的第4行下方添加<code>APlayerController.autoPlay = &#39;&lt;%= theme.plugins.aplayer.autoplay %&gt;&#39;;</code><br><img src="https://7bu.top/2020/09/04/50cb9ab2ce415.png" class="lazyload" data-srcset="https://7bu.top/2020/09/04/50cb9ab2ce415.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt=""></p>
+<h3 id="修改aplayer-js"><a href="#修改aplayer-js" class="headerlink" title="修改aplayer.js"></a>修改aplayer.js</h3><p>打开<code>themes/volantis/source/js/aplayer.js</code>文件，将下方代码替换掉原<code>aplayer.js</code>代码</p>
+<details green><summary> <p>点击查看aplayer.js代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Cookie.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setCookie</span>(<span class="params">e,n,i,o,t,r</span>)</span>&#123;<span class="keyword">if</span>(<span class="string">&quot;undefined&quot;</span>!=<span class="keyword">typeof</span> is_remember)<span class="keyword">return</span>!<span class="number">1</span>;<span class="keyword">var</span> u=<span class="keyword">new</span> <span class="built_in">Date</span>;u.setTime(u.getTime());<span class="keyword">var</span> c=<span class="keyword">new</span> <span class="built_in">Date</span>(u.getTime()+i);<span class="built_in">document</span>.cookie=e+<span class="string">&quot;=&quot;</span>+<span class="built_in">escape</span>(n)+(i?<span class="string">&quot;; expires=&quot;</span>+c.toGMTString():<span class="string">&quot;&quot;</span>)+(o?<span class="string">&quot;; path=&quot;</span>+o:<span class="string">&quot;&quot;</span>)+(t?<span class="string">&quot;; domain=&quot;</span>+t:<span class="string">&quot;&quot;</span>)+(r?<span class="string">&quot;; secure&quot;</span>:<span class="string">&quot;&quot;</span>)&#125;<span class="function"><span class="keyword">function</span> <span class="title">getCookie</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">var</span> n=<span class="built_in">document</span>.cookie,i=e+<span class="string">&quot;=&quot;</span>,o=n.indexOf(<span class="string">&quot;; &quot;</span>+i);<span class="keyword">if</span>(<span class="number">-1</span>==o)&#123;<span class="keyword">if</span>(<span class="number">0</span>!=(o=n.indexOf(i)))<span class="keyword">return</span> <span class="literal">null</span>&#125;<span class="keyword">else</span> o+=<span class="number">2</span>;<span class="keyword">var</span> t=<span class="built_in">document</span>.cookie.indexOf(<span class="string">&quot;;&quot;</span>,o);<span class="keyword">return</span><span class="number">-1</span>==t&amp;&amp;(t=n.length),<span class="built_in">unescape</span>(n.substring(o+i.length,t))&#125;<span class="function"><span class="keyword">function</span> <span class="title">deleteCookie</span>(<span class="params">e,n,i</span>)</span>&#123;getCookie(e)&amp;&amp;(<span class="built_in">document</span>.cookie=e+<span class="string">&quot;=&quot;</span>+(n?<span class="string">&quot;; path=&quot;</span>+n:<span class="string">&quot;&quot;</span>)+(i?<span class="string">&quot;; domain=&quot;</span>+i:<span class="string">&quot;&quot;</span>)+<span class="string">&quot;; expires=Thu, 01-Jan-70 00:00:01 GMT&quot;</span>)&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查 Aplayer 对象状态</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAPlayer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (APlayerController.player == <span class="literal">undefined</span>) &#123;</span><br><span class="line">		setAPlayerObject();</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (APlayerController.observer == <span class="literal">undefined</span>) &#123;</span><br><span class="line">			setAPlayerObserver();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置全局播放器所对应的 aplyer 对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setAPlayerObject</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (APlayerController.id == <span class="literal">undefined</span>) <span class="keyword">return</span>;</span><br><span class="line">	<span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;meting-js&#x27;</span>).forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (item.meta.id == APlayerController.id) &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;meting-js&#x27;</span>)[index].aplayer != <span class="literal">undefined</span>) &#123;</span><br><span class="line"> 				APlayerController.player = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;meting-js&#x27;</span>)[index].aplayer;</span><br><span class="line">				setAPlayerObserver();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件监听</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setAPlayerObserver</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		APlayerController.player.on(<span class="string">&#x27;play&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">			updateAPlayerControllerStatus();</span><br><span class="line">			<span class="keyword">var</span> index = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.index;</span><br><span class="line">			<span class="keyword">var</span> title = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.audios[index].title;</span><br><span class="line">			<span class="keyword">var</span> artist = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.audios[index].artist;</span><br><span class="line">			$.message(&#123;<span class="attr">title</span>: <span class="string">&#x27;音乐通知&#x27;</span>,<span class="attr">message</span>: <span class="string">&#x27;正在播放：&#x27;</span> + title + <span class="string">&#x27; - &#x27;</span> + artist,<span class="attr">type</span>: <span class="string">&#x27;success&#x27;</span>&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line">		APlayerController.player.on(<span class="string">&#x27;pause&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">			updateAPlayerControllerStatus();</span><br><span class="line">			<span class="keyword">var</span> index = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.index;</span><br><span class="line">			<span class="keyword">var</span> title = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.audios[index].title;</span><br><span class="line">			<span class="keyword">var</span> artist = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.audios[index].artist;</span><br><span class="line">			$.message(&#123;<span class="attr">title</span>: <span class="string">&#x27;音乐通知&#x27;</span>,<span class="attr">message</span>: <span class="string">&#x27;暂停播放：&#x27;</span> + title + <span class="string">&#x27; - &#x27;</span> + artist,<span class="attr">type</span>: <span class="string">&#x27;success&#x27;</span>&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line">        APlayerController.player.on(<span class="string">&#x27;volumechange&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">			onUpdateAPlayerVolume();</span><br><span class="line">		&#125;);</span><br><span class="line">		APlayerController.player.on(<span class="string">&#x27;loadstart&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">			<span class="comment">// 跳到下一曲时更新标题</span></span><br><span class="line">			updateTitle();</span><br><span class="line">		&#125;);</span><br><span class="line">		APlayerController.player.on(<span class="string">&#x27;error&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; <span class="comment">// 音乐加载失败</span></span><br><span class="line">			<span class="keyword">var</span> index = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.index;</span><br><span class="line">			<span class="keyword">var</span> title = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;meting-js&#x27;</span>).aplayer.list.audios[index].title;</span><br><span class="line">			$.message(&#123;<span class="attr">title</span>: <span class="string">&quot;音乐通知&quot;</span>,<span class="attr">message</span>: <span class="string">&quot;歌曲：&quot;</span> + title + <span class="string">&quot;加载失败~&quot;</span>,<span class="attr">type</span>: <span class="string">&#x27;warning&#x27;</span>&#125;);</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 监听音量手势</span></span><br><span class="line">		APlayerController.volumeBarWrap = <span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;nav volume&#x27;</span>)[<span class="number">0</span>].children[<span class="number">0</span>];</span><br><span class="line">		APlayerController.volumeBar = APlayerController.volumeBarWrap.children[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">updateAPlayerVolume</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">let</span> percentage = ((e.clientX || e.changedTouches[<span class="number">0</span>].clientX) - APlayerController.volumeBar.getBoundingClientRect().left) / APlayerController.volumeBar.clientWidth;</span><br><span class="line">			percentage = <span class="built_in">Math</span>.max(percentage, <span class="number">0</span>);</span><br><span class="line">			percentage = <span class="built_in">Math</span>.min(percentage, <span class="number">1</span>);</span><br><span class="line">			APlayerController.player.volume(percentage);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">const</span> thumbMove = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">			updateAPlayerVolume(e);</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">const</span> thumbUp = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">			APlayerController.volumeBarWrap.classList.remove(<span class="string">&#x27;aplayer-volume-bar-wrap-active&#x27;</span>);</span><br><span class="line">			<span class="built_in">document</span>.removeEventListener(<span class="string">&#x27;mouseup&#x27;</span>, thumbUp);</span><br><span class="line">			<span class="built_in">document</span>.removeEventListener(<span class="string">&#x27;mousemove&#x27;</span>, thumbMove);</span><br><span class="line">			updateAPlayerVolume(e);</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		APlayerController.volumeBarWrap.addEventListener(<span class="string">&#x27;mousedown&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">			APlayerController.volumeBarWrap.classList.add(<span class="string">&#x27;aplayer-volume-bar-wrap-active&#x27;</span>);</span><br><span class="line">			<span class="built_in">document</span>.addEventListener(<span class="string">&#x27;mousemove&#x27;</span>, thumbMove);</span><br><span class="line">			<span class="built_in">document</span>.addEventListener(<span class="string">&#x27;mouseup&#x27;</span>, thumbUp);</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 设置完监听就立即更新一次</span></span><br><span class="line">		updateAPlayerControllerStatus();</span><br><span class="line">		onUpdateAPlayerVolume();</span><br><span class="line">		APlayerController.observer = <span class="literal">true</span>;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">&#x27;APlayerController ready!&#x27;</span>);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="keyword">delete</span> APlayerController.observer;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新控制器状态</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateAPlayerControllerStatus</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (APlayerController.player.audio.paused) &#123;</span><br><span class="line">			<span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;nav toggle&#x27;</span>)[<span class="number">0</span>].children[<span class="number">0</span>].classList.add(<span class="string">&quot;fa-play&quot;</span>);</span><br><span class="line">			<span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;nav toggle&#x27;</span>)[<span class="number">0</span>].children[<span class="number">0</span>].classList.remove(<span class="string">&quot;fa-pause&quot;</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;nav toggle&#x27;</span>)[<span class="number">0</span>].children[<span class="number">0</span>].classList.remove(<span class="string">&quot;fa-play&quot;</span>);</span><br><span class="line">			<span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;nav toggle&#x27;</span>)[<span class="number">0</span>].children[<span class="number">0</span>].classList.add(<span class="string">&quot;fa-pause&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onUpdateAPlayerVolume</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		APlayerController.volumeBar.children[<span class="number">0</span>].style.width = APlayerController.player.audio.volume * <span class="number">100</span> + <span class="string">&#x27;%&#x27;</span></span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 播放/暂停</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aplayerToggle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	checkAPlayer();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		APlayerController.player.toggle();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上一曲</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aplayerBackward</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	checkAPlayer();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		APlayerController.player.skipBack();</span><br><span class="line">		APlayerController.player.play();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下一曲</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aplayerForward</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	checkAPlayer();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		APlayerController.player.skipForward();</span><br><span class="line">		APlayerController.player.play();</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调节音量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aplayerVolume</span>(<span class="params">percent</span>) </span>&#123;</span><br><span class="line">	checkAPlayer();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		APlayerController.player.volume(percent);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新音乐标题</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateTitle</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	checkAPlayer();</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">let</span> index = APlayerController.player.list.index;</span><br><span class="line">		<span class="keyword">let</span> obj = APlayerController.player.list.audios[index];</span><br><span class="line">		<span class="keyword">let</span> title = obj.title.length &gt; <span class="number">15</span> ? <span class="string">&quot;&lt;span class=&#x27;text-animate&#x27;&gt;&quot;</span> + obj.title + <span class="string">&quot;&lt;/span&gt;&quot;</span> : obj.title;</span><br><span class="line">		<span class="built_in">document</span>.getElementsByClassName(<span class="string">&#x27;nav music-title&#x27;</span>)[<span class="number">0</span>].innerHTML = title;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(error);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自动播放音乐</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">autoPlayMusic</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> autoPlayMusic = getCookie(<span class="string">&#x27;autoPlayMusic&#x27;</span>) == <span class="literal">null</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> ($(<span class="built_in">window</span>).width() &gt; <span class="number">500</span> &amp;&amp; autoPlayMusic &amp;&amp; APlayerController.autoPlay) &#123;</span><br><span class="line">			<span class="keyword">let</span> isplay = <span class="literal">true</span>;</span><br><span class="line">			$.message(&#123;<span class="attr">title</span>: <span class="string">&quot;音乐通知&quot;</span>,<span class="attr">message</span>: <span class="string">&quot;即将自动播放，点击&lt;a id=&#x27;stopMusic&#x27; class=&#x27;stopMusic fix-cursor-pointer&#x27;&gt;停止播放&lt;/a&gt;&quot;</span>,<span class="attr">type</span>: <span class="string">&#x27;warning&#x27;</span>&#125;);</span><br><span class="line">			<span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">				<span class="keyword">if</span> (APlayerController.player == <span class="literal">undefined</span>) &#123;</span><br><span class="line">					checkAPlayer();</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (isplay) &#123;</span><br><span class="line">					aplayerToggle();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;, <span class="number">3500</span>);</span><br><span class="line">			$(<span class="string">&quot;#stopMusic&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">				isplay = <span class="literal">false</span>;</span><br><span class="line">				$(<span class="string">&quot;.c-message--close&quot;</span>).click();</span><br><span class="line">				<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">					$.message(&#123;<span class="attr">title</span>: <span class="string">&quot;音乐通知&quot;</span>,<span class="attr">time</span>: <span class="number">999999</span>,<span class="attr">message</span>: <span class="string">&quot;是否永久关闭音乐自动播放?  &lt;a id=&#x27;dontPlayMusic&#x27; class=&#x27;stopMusic fix-cursor-pointer&#x27;&gt;&lt;b&gt;确认&lt;/b&gt;&lt;/a&gt;&quot;</span>,<span class="attr">type</span>: <span class="string">&#x27;warning&#x27;</span>&#125;);</span><br><span class="line">					$(<span class="string">&quot;#dontPlayMusic&quot;</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">						<span class="keyword">var</span> expires = <span class="number">7</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>;</span><br><span class="line">						setCookie(<span class="string">&quot;autoPlayMusic&quot;</span>, <span class="string">&#x27;false&#x27;</span>, expires, <span class="string">&#x27;/&#x27;</span>);</span><br><span class="line">						$(<span class="string">&quot;.c-message--close&quot;</span>).click();</span><br><span class="line">						<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">							$.message(&#123;<span class="attr">title</span>: <span class="string">&#x27;音乐通知&#x27;</span>,<span class="attr">time</span>: <span class="number">6000</span>,<span class="attr">message</span>: <span class="string">&#x27;关闭成功，未来一周内将不再提醒~&#x27;</span>,<span class="attr">type</span>: <span class="string">&#x27;success&#x27;</span>&#125;);</span><br><span class="line">						&#125;, <span class="number">1000</span>);</span><br><span class="line">					&#125;);</span><br><span class="line">				&#125;, <span class="number">1000</span>);</span><br><span class="line">			&#125;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;, <span class="number">1500</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 网速快</span></span><br><span class="line">	checkAPlayer();</span><br><span class="line">	<span class="comment">// 网速一般</span></span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		checkAPlayer();</span><br><span class="line">	&#125;, <span class="number">3000</span>);</span><br><span class="line">	<span class="comment">// 网速较慢</span></span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		checkAPlayer();</span><br><span class="line">	&#125;, <span class="number">10000</span>);</span><br><span class="line">	autoPlayMusic();</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h2 id="添加复制通知"><a href="#添加复制通知" class="headerlink" title="添加复制通知"></a>添加复制通知</h2><p>打开<code>themes/volantis/layout/third-party/clipboard/script.ejs</code>文件</p>
+<p>有亿点懒，直接用下方代码替换掉<code>clipboard/script.ejs</code>文件中原代码即可。</p>
+<details green><summary> <p>点击查看clipboard/script.ejs代码</p> </summary>
+              <div class='content'>
+              <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;&lt;%- theme.plugins.clipboard.js %&gt;&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var clipboard &#x3D; new ClipboardJS(&#39;.btn-copy&#39;, &#123;</span><br><span class="line">        target: function (trigger) &#123;</span><br><span class="line">            return trigger.nextElementSibling</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    function wait(callback, seconds) &#123;</span><br><span class="line">        var timelag &#x3D; null;</span><br><span class="line">        timelag &#x3D; window.setTimeout(callback, seconds)</span><br><span class="line">    &#125;</span><br><span class="line">    function pjax_initCopyCode() &#123;</span><br><span class="line">		if($(&quot;.highlight .code pre&quot;).length+$(&quot;.article pre code&quot;).length&#x3D;&#x3D;0)return;</span><br><span class="line">        var copyHtml &#x3D; &#39;&#39;;</span><br><span class="line">        copyHtml +&#x3D; &#39;&lt;button class&#x3D;&quot;btn-copy&quot; data-clipboard-snippet&#x3D;&quot;&quot;&gt;&#39;;</span><br><span class="line">        copyHtml +&#x3D; &#39;&lt;i class&#x3D;&quot;fas fa-copy&quot;&gt;&lt;&#x2F;i&gt;&lt;span&gt;COPY&lt;&#x2F;span&gt;&#39;;</span><br><span class="line">        copyHtml +&#x3D; &#39;&lt;&#x2F;button&gt;&#39;;</span><br><span class="line">        $(&quot;.highlight .code pre&quot;).before(copyHtml);</span><br><span class="line">        $(&quot;.article pre code&quot;).before(copyHtml);</span><br><span class="line">        clipboard.off(&#39;success&#39;).on(&#39;success&#39;, function (e) &#123;</span><br><span class="line">            $.message(&#123;</span><br><span class="line">            title: &#39;复制成功&#39;,</span><br><span class="line">            message: &quot;代码已复制，请遵守相关授权协议。&quot;,</span><br><span class="line">            type: &#39;success&#39;</span><br><span class="line">        &#125;);</span><br><span class="line">            let $btn &#x3D; $(e.trigger);</span><br><span class="line">            $btn.addClass(&#39;copied&#39;);</span><br><span class="line">            let $icon &#x3D; $($btn.find(&#39;i&#39;));</span><br><span class="line">            $icon.removeClass(&#39;fa-copy&#39;);</span><br><span class="line">            $icon.addClass(&#39;fa-check-circle&#39;);</span><br><span class="line">            let $span &#x3D; $($btn.find(&#39;span&#39;));</span><br><span class="line">            $span[0].innerText &#x3D; &#39;COPIED&#39;;</span><br><span class="line">            wait(function () &#123;</span><br><span class="line">                $icon.removeClass(&#39;fa-check-circle&#39;);</span><br><span class="line">                $icon.addClass(&#39;fa-copy&#39;);</span><br><span class="line">                $span[0].innerText &#x3D; &#39;COPY&#39;</span><br><span class="line">            &#125;, 2000)</span><br><span class="line">        &#125;);</span><br><span class="line">        clipboard.off(&#39;error&#39;).on(&#39;error&#39;, function (e) &#123;</span><br><span class="line">            e.clearSelection();</span><br><span class="line">            let $btn &#x3D; $(e.trigger);</span><br><span class="line">            $btn.addClass(&#39;copy-failed&#39;);</span><br><span class="line">            let $icon &#x3D; $($btn.find(&#39;i&#39;));</span><br><span class="line">            $icon.removeClass(&#39;fa-copy&#39;);</span><br><span class="line">            $icon.addClass(&#39;fa-times-circle&#39;);</span><br><span class="line">            let $span &#x3D; $($btn.find(&#39;span&#39;));</span><br><span class="line">            $span[0].innerText &#x3D; &#39;COPY FAILED&#39;;</span><br><span class="line">            wait(function () &#123;</span><br><span class="line">                $icon.removeClass(&#39;fa-times-circle&#39;);</span><br><span class="line">                $icon.addClass(&#39;fa-copy&#39;);</span><br><span class="line">                $span[0].innerText &#x3D; &#39;COPY&#39;</span><br><span class="line">            &#125;, 2000)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    $(function () &#123;</span><br><span class="line">        pjax_initCopyCode()</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+<h2 id="『记』"><a href="#『记』" class="headerlink" title="『记』"></a>『记』</h2><p>摸清楚原理后，可以自行添加其他行为的弹窗哦~</p>
+<div class="note message green"><p>既然都看到这里啦，不如在下方评论区留下你的脚印再走~</p></div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+        
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/posts/4f0411d9/" title="Volantis-4.0升级踩坑记录" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/256/safari.png" /><span class="title">Volantis-4.0升级踩坑记录</span><span class="excerpt">记录下升级Volantis 4.0 踩的坑</span></a></div></section></div>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>版权声明：本网站所有文章除特别声明外，均采用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="/">Colsrch’Blog</a></p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://colsrch.cn/posts/72bb5148/>https://colsrch.cn/posts/72bb5148/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-13T12:50:08+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年9月13日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Volantis/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Volantis</p></a></div>
+
+
+        
+      
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.3k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：18分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://colsrch.cn/posts/72bb5148/&title=如何给博客添加弹窗通知 - Colsrch'Blog&summary=本教程适用于Volantis主题"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://colsrch.cn/posts/72bb5148/&title=如何给博客添加弹窗通知 - Colsrch'Blog&summary=本教程适用于Volantis主题"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://colsrch.cn/posts/72bb5148/&title=如何给博客添加弹窗通知 - Colsrch'Blog&summary=本教程适用于Volantis主题"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a class='share'><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAAAAACi5bZQAAAC9UlEQVR42u3aQW7DMAwEwPz/0+29aGFxSRdmMrrFdRxx3APB1evL+nW9EIABAwYMGDBrYF7huvyB4vd/Xq/eP1UPGDBgwIABA2YfzHEDdNeGimCnn6v1gAEDBgwYMGD2wlQLSAucaghP93N8PxgwYMCAAQPmY2GqA6i0Yay+KDBgwIABAwYMmNP7u4FZeh0MGDBgwIAB87kw5YAq3Eg3iHt8EgkGDBgwYMCA+TeYqQM/T/kc1wMGDBgwYMCAWQPTXSlk2ohVv1euBwwYMGDAgAGzBubuAC1t1FKgdP9gwIABAwYMmH0wp0FZN4hL76sGcdXG8nJQBQYMGDBgwIBZB9MtpAqUXp9uJMGAAQMGDBgwe2DSH0w3kgZm8eBpaoIHBgwYMGDAgHk8TBpkpYXe3fhVg0IwYMCAAQMGzB6YblBV/XvaoKWFVp8DBgwYMGDAgNkD0wXpNnRpcNZu5P66DwwYMGDAgAGzBmYqOKs2fNXnTMHEJ6rAgAEDBgwYMI+DSTecFtYdJKUv6riRBAMGDBgwYMCsh+kGWd0ArRuspY0jGDBgwIABA2YPTFpA2riVA7DhhrI8wQMDBgwYMGDAPBZm+oBQtdBu0FZ9DhgwYMCAAQPmfWHSAzrVhqp60Cdt5Mr7AgMGDBgwYMC8HUw3kEsHU1MNZPvgEBgwYMCAAQPmsTDVAVB1UDQVkHWDust/ADBgwIABAwbMWpjuAGoKOG0w08EYGDBgwIABA+Z9YKoHiarA8cGeZsN4WScYMGDAgAEDZg1Md3XB7g7oygeKwIABAwYMGDBrYF7hmhoYTQVo3YAODBgwYMCAAbMXJg2+0g2eXp9+UeMnqsCAAQMGDBgwj4GpNmBpwFUOwm4GBAMGDBgwYMCAmR6And5fhf6zHjBgwIABAwYMmKEB2On9pxCPafDAgAEDBgwYMOMw1QK6AVt3AFUNBC/BwYABAwYMGDDrYNKBUrrR+GBPCHT8gsGAAQMGDBgwa2AsMGDAgAEDBsyy9Q0SOOI7DhzmkwAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/posts/f7826499/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>C语言：编写程序，在主函数中输入一个整数m，函数中返回大于m且紧随m的素数，并在主函数中输出该素数。</p>
+          <p class='content'>题目编写程序，在主函数中输入一个整数m，函数中返回大于m且紧随m的素数，并在主函数中输出该素数。
+素数是什么素数也名质数，是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。
+编写...</p>
+        </a>
+      
+      
+        <a class='next' href='/posts/4f0411d9/'>
+          <p class='title'>Volantis-4.0升级踩坑记录<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>记录下升级Volantis 4.0 踩的坑
+
+
+
+请使用hexo 5.1.0 以上版本
+请忘记原配置写法并重写配置
+某个页面内不需要显示title则将front-matter中的title改为s...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow floatable" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget grid shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-map-signs fa-fw" aria-hidden="true"></i><span class='name'>导航</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" title="/atom.xml" href="/atom.xml"
+          
+          
+            target="_blank"
+          
+          id="atomxml">
+          
+            <i class="fas fa-rss fa-fw" aria-hidden="true"></i>
+          
+          RSS订阅
+        </a>
+      
+        <a class="flat-box" title="/friends/" href="/friends/"
+          
+          
+          id="friends">
+          
+            <i class="fas fa-users fa-fw" aria-hidden="true"></i>
+          
+          友情链接
+        </a>
+      
+        <a class="flat-box" title="/messages/" href="/messages/"
+          
+          
+          id="messages">
+          
+            <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+          
+          留言板
+        </a>
+      
+        <a class="flat-box" title="/Creator-said/" href="/Creator-said/"
+          
+          
+          id="Creator-said">
+          
+            <i class="fas fa-comment-dots fa-fw fa-fw" aria-hidden="true"></i>
+          
+          主创说
+        </a>
+      
+        <a class="flat-box" title="http://donations.colsrch.top/" href="http://donations.colsrch.top/"
+          
+            rel="noopener external nofollow noreferrer"
+          
+          
+            target="_blank"
+          
+          id="http:donationscolsrchtop">
+          
+            <i class="fa fa-hand-holding-usd fa-fw" aria-hidden="true"></i>
+          
+          要饭饭
+        </a>
+      
+        <a class="flat-box" title="https://travellings.now.sh/" href="https://travellings.now.sh/"
+          
+            rel="noopener external nofollow noreferrer"
+          
+          
+            target="_blank"
+          
+          id="https:travellingsnowsh">
+          
+            <i class="fa fa-binoculars fa-fw" aria-hidden="true"></i>
+          
+          开往
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget text shadow floatable desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-bullhorn fa-fw" aria-hidden="true"></i><span class='name'>公告</span>
+    
+  </header>
+
+
+  <div class='content'>
+    
+      <p>本站默认替换了右键菜单，唤醒原系统菜单： <code>Ctrl</code> + <code>右键</code></p>
+
+    
+      <p>本站已更换域名：<a href="https://colsrch.cn">https://colsrch.cn</a> ，麻烦小伙伴们更新一下我的友链信息啦~</p>
+
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow floatable desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8E%E8%A8%80%E3%80%8F"><span class="toc-text">『言』</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0Message-js"><span class="toc-text">添加Message.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%BC%B9%E7%AA%97css%E6%A0%B7%E5%BC%8F"><span class="toc-text">添加弹窗css样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90%E9%80%9A%E7%9F%A5"><span class="toc-text">添加音乐通知</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9aplayer"><span class="toc-text">修改aplayer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9aplayer-js"><span class="toc-text">修改aplayer.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%8D%E5%88%B6%E9%80%9A%E7%9F%A5"><span class="toc-text">添加复制通知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%8E%E8%AE%B0%E3%80%8F"><span class="toc-text">『记』</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="http://github.com/Colsrch"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=1ba6uaantr2Vs7qtuLS8ufu2urg"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1332925715&amp;site=qq&amp;menu=yes"
+                class="social fab fa-qq flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=405423746"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://travellings.now.sh/"
+                class="social fa fa-binoculars flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        
+          <div><p>本站使用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://volantis.js.org/">Volantis</a> 作为主题 | 由 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io/zh-cn/">Hexo</a> 强力驱动</p>
+</div>
+        
+      
+    
+      
+        
+          <div><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe">萌ICP备</a> <a target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe/?keyword=202008888">202008888号</a></p>
+</div>
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2019-2020 Colsrch</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)' rel="external nofollow noreferrer"></a>
+    </div>
+  </div>
+  <div>
+    <!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".md").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  function SCload_fancybox() {
+    if($(".md").find("img").not('.inline').not('a img').length+$(".article-entry").find("img").length==0)return;
+    loadCSS("https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css", document.getElementById("loadcss"));
+    setTimeout(function() {
+      loadScript('https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', pjax_fancybox)
+    }, 1);
+  };
+  $(function () {
+    SCload_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+  
+  
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="menuCopy()"
+        
+        
+          id="menu-copy-text"
+        >
+        <i class='fas fa-copy fa-fw'></i> 复制选中内容
+      </a>
+    </li>
+  
+        
+      
+        
+          <li class='navigation'>
+            <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fas fa-arrow-left fa-fw'></i></a>
+            <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fas fa-arrow-right fa-fw'></i></a>
+            <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fas fa-redo fa-fw'></i></a>
+            <a class='nav icon-only fix-cursor-default' href='/'><i class='fas fa-home fa-fw'></i></a>
+          </li>
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/Creator-said/
+        
+        
+        
+        
+          id="Creator-said"
+        >
+        <i class='fas fa-comment-dots fa-fw'></i> 主创说
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/messages/
+        
+        
+        
+        
+          id="messages"
+        >
+        <i class='fas fa-comments fa-fw'></i> 留言板
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/friends/
+        
+        
+        
+        
+          id="friends"
+        >
+        <i class='fas fa-user-tie fa-fw'></i> 我的朋友们
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/photo/
+        
+        
+        
+        
+          id="photo"
+        >
+        <i class='fa fa-image fa-fw'></i> 照片馆
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=/history/
+        
+        
+        
+        
+          id="history"
+        >
+        <i class='fa fa-history fa-fw'></i> 建站史
+      </a>
+    </li>
+  
+        
+      
+        
+      
+    </ul>
+  </div>
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey || $(window).width() <= 500) {
+        if (event.ctrlKey) return true;
+      if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) return true;
+      }
+      setMenulocation();
+      setMenuCopy();
+      if (false == true) {
+      	try {
+          checkAPlayer();
+          updateTitle();
+      	} catch (error) {console.log(error);}
+      }
+      return false;
+    };
+    document.getElementById('rightmenu-wrapper').oncontextmenu  = function (event) {
+      event.stopPropagation();  // 阻止右键上的右键
+      return false;
+    }
+    document.querySelectorAll('img').forEach((item) => {  // IMG 放出菜单
+      item.oncontextmenu  = function (event) {
+        event.stopPropagation();
+        return true;
+      }
+    })
+    document.addEventListener("click", function (event) {
+      hideMenu();
+    });
+    function hideMenu(  ) {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function setMenulocation() {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var mouseClientX = event.clientX;
+      var mouseClientY = event.clientY;
+      var menuWidth = menuContent.offsetWidth == 0 ? 160 : menuContent.offsetWidth;
+      var menuHeight = menuContent.offsetHeight == 0 ? 340 : menuContent.offsetHeight;
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      var showLeft = mouseClientX + menuWidth > screenWidth ? mouseClientX - menuWidth + 10 : mouseClientX;
+      var showTop = mouseClientY + menuHeight > screenHeight ? mouseClientY - menuHeight + 10 : mouseClientY;
+      mymenu.style.left = showLeft + "px";
+      mymenu.style.top = showTop + "px";
+      mymenu.style.display = 'block';
+    }
+    function setMenuCopy() {
+      if (window.getSelection().toString()) {
+        document.getElementById('menu-copy-text').style.display = 'block';
+      } else {
+        document.getElementById('menu-copy-text').style.display = 'none';
+      }
+    }
+    function menuCopy() {
+      document.execCommand("Copy");
+      $.message({title:'复制成功',message: window.getSelection().toString(),type:'success'});
+    }
+  </script>
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            $.message({
+            title: '复制成功',
+            message: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+        });
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+    pjax_scrollrebeal();
+  });
+</script>
+
+
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "自古评论出人才~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "lmIOy5cBDQiz5oeAgPv0Hbe7-gzGzoHsz",
+      appKey: "G3rTprduowLdjm9CQpj58Fcm",
+      pageSize: '5',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
+
+<script type="text/javascript">
+function getClientHeight(){
+  var clientHeight=0;
+  if(document.body.clientHeight&&document.documentElement.clientHeight){
+  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }else{
+  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }
+  return clientHeight;
+}
+function supportCss3(style) {
+  var prefix = ['webkit', 'Moz', 'ms', 'o'],
+  i,
+  humpString = [],
+  htmlStyle = document.documentElement.style,
+  _toHumb = function (string) {
+  return string.replace(/-(\w)/g, function ($0, $1) {
+  return $1.toUpperCase();
+  });
+  };
+  for (i in prefix)
+  humpString.push(_toHumb(prefix[i] + '-' + style));
+  humpString.push(_toHumb(style));
+  for (i in humpString)
+  if (humpString[i] in htmlStyle) return true;
+  return false;
+};
+//配置信息
+var options = {
+  bottom: '32px',
+  right: 'unset',
+  left: '16px',
+  time: '0s',
+  mixColor: '#f4f4f4',
+  backgroundColor: '#f4f4f4',
+  buttonColorDark: '#333',
+  buttonColorLight: '#ddd',
+  saveInCookies: true,
+  label: '',
+  autoMatchOsTheme: true
+};
+// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
+
+function pjax_darkmodejs(){
+  
+  if(!supportCss3('mix-blend-mode'))return;
+  var checkExist2 = setInterval(function() {
+     if (typeof jQuery == 'undefined'){return;}
+     clearInterval(checkExist2);
+     var TopFlag=getClientHeight();
+    $(window).scroll(function(){
+      var top = $(document).scrollTop();
+      if(top > TopFlag) {
+        $(".darkmode-layer").css("mix-blend-mode","normal");
+        $(".darkmode-layer").css("background-color","#222");
+      }else{
+        $(".darkmode-layer").css("mix-blend-mode","difference");
+        $(".darkmode-layer").css("background-color","");
+      }
+    })
+  }, 100);
+  
+}
+// mix-blend-mode support?
+if(supportCss3('mix-blend-mode')){
+  window.darkmode = new Darkmode(options);
+  
+  window.darkmode.showWidget();
+  
+  pjax_darkmodejs();
+}
+////////////////Development///////////////////////
+//////////////darkmode模式切换////////////////////
+//window.darkmode.toggle();                     //
+//////////////darkmode模式判断////////////////////
+//console.log(window.darkmode.isActivated())    //
+//////////////////////////////////////////////////
+</script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+<!-- optional -->
+
+  <script>
+const SearchServiceimagePath="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/img/";
+const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
+(function ($) {
+  
+    customSearch = new HexoSearch({
+      imagePath: SearchServiceimagePath
+    });
+  
+})(jQuery);
+
+</script>
+
+
+
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'HIDu30DxW8qPSXVFnP0bdPW0-gzGzoHsz',
+    app_key: '12Po8BbKCMD0CGMcouEWRyi8',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://colsrch.cn' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://colsrch.cn' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://colsrch.cn' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              let curPath = window.location.pathname;
+              if (curPath.includes('index.html')) {
+                curPath = curPath.substring(0, curPath.lastIndexOf('index.html'));
+              }
+              if (pv.getAttribute('data-path') == curPath) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == curPath) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/Creator-said/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      if (typeof $.fancybox != "undefined") {
+        $.fancybox.close();    // 关闭弹窗
+      }
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+      // _hmt.push(['_trackPageview', document.location.pathname]);
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+          if (typeof $.fancybox == "undefined") {
+            SCload_fancybox();
+          } else {
+            pjax_fancybox();
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+          pjax_darkmodejs();
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
